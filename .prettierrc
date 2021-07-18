@@ -1,0 +1,7 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "endOfLine": "lf", // 저장하고 마지막 라인 뒤에 focus
+  "tabWidth": 2,
+  "useTabs": false
+}
