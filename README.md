@@ -41,4 +41,4 @@
 ### 2021-07-19(월)
 
 - **개발자 도구에서 컴파일 전 위치 표시하기**
-  - npm script에 옵션 <code>--source-map</code>을 사용하면 원본 파일의 코드 위치를 보여줌.
+  - npm script에 옵션 <code>--source-map [boolean]</code>을 사용하면 원본 파일의 코드 위치를 보여줌.
