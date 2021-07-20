@@ -60,6 +60,6 @@
   - <code>unit</code>: 한 기둥의 width
   - <code>gutter</code>: 기둥과 기둥사이
   - <code>1 column</code>: unit과 양 옆의 gutter 세트
-  - <code>margin</code>:
+  - <code>margin</code>: 나머지 영역
   - gutter에는 요소를 배치하지 않는다.
   - 모바일은 기기마다 해상도가 달라서 unit의 단위가 %이다.
