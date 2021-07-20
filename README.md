@@ -42,3 +42,24 @@
 
 - **개발자 도구에서 컴파일 전 위치 표시하기**
   - npm script에 옵션 <code>--source-map [boolean]</code>을 사용하면 원본 파일의 코드 위치를 보여줌.
+
+### 2021-07-20(화)
+
+- **프로젝트 구조화하기**
+  - styles 폴더에 base와 constants 폴더로 구분.
+    - base: reset, normalize scss
+    - constants: 변수 파일 저장
+- **⭐️ Typography 주의사항**
+  - font-size, line-height, letter-spacing을 세트로 보기!!
+  - letter-spacing은 em 단위로.
+  - html에 본문 폰트 size를 지정해서 rem작업하기 좋게 초기화.
+  - body에게 본문 폰트 color를 지정해서 상속받기 좋게 초기화.
+  - font-smoothing
+    - font가 부드럽게 렌더링됨.
+- **Grid system 기본 지식**
+  - <code>unit</code>: 한 기둥의 width
+  - <code>gutter</code>: 기둥과 기둥사이
+  - <code>1 column</code>: unit과 양 옆의 gutter 세트
+  - <code>margin</code>:
+  - gutter에는 요소를 배치하지 않는다.
+  - 모바일은 기기마다 해상도가 달라서 unit의 단위가 %이다.
