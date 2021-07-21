@@ -49,6 +49,7 @@
   - styles 폴더에 base와 constants 폴더로 구분.
     - base: reset, normalize scss
     - constants: 변수 파일 저장
+    - layouts: 커스텀 그리드 시스템 설계
 - **⭐️ Typography 주의사항**
   - font-size, line-height, letter-spacing을 세트로 보기!!
   - letter-spacing은 em 단위로.
@@ -57,9 +58,41 @@
   - font-smoothing
     - font가 부드럽게 렌더링됨.
 - **Grid system 기본 지식**
+
   - <code>unit</code>: 한 기둥의 width
   - <code>gutter</code>: 기둥과 기둥사이
   - <code>1 column</code>: unit과 양 옆의 gutter 세트
   - <code>margin</code>: 나머지 영역
+  - <code>container</code>: 그리드 시스템이 적용되는 영역
   - gutter에는 요소를 배치하지 않는다.
   - 모바일은 기기마다 해상도가 달라서 unit의 단위가 %이다.
+
+  ### 2021-07-21(수)
+
+- **Custom grid system 만들기**
+
+  - 모바일(sm), 테블릿(md), 데스크탑(lg) 별로 그리드 분석 후 코드로 저장
+  - ⭐️ MOBILE FIRST!!
+    - <code>.container</code>, <code>.row</code>, <code>.col</code>의 공통 적용 코드를 작성 후 해상도에 따라 미디어쿼리로 필요한 부분만 업데이트하기.
+    - SCSS의 템플릿 문자열은 <code>#{}</code>
+  - ⭐️ max-container와 같이 고정된 값도 필요하다면 변수로 선언해 코드의 재사용성을 높이기.
+
+- **@Mixin 만들기**
+
+  - <code>@mixin</code> = 함수
+    - 사용(호출)할 떈 <code>@include</code>
+  - @mixin의 매개변수
+    - 매개변수를 선택적으로 쓰고 싶을 때는 기본값을 false로 주고, @if문을 통해 유효성 검사.
+      - ex) <code>type-of()</code>
+  - @mixin 재사용성 높이기
+    - 공통 부분 @mixin을 만들고, 매개변수로 체크해 효율성을 높이자!
+
+- **function 만들기**
+
+  - @mixin과의 차이점
+    - function은 return을 통해 @include 없이 특정 값 반환.
+
+- **데이터 타입: map**
+  - key, value로 이루어진 데이터 타입.
+  - 형태: map name: ()
+  - 사용: <code>map-get(map name, key)</code>
