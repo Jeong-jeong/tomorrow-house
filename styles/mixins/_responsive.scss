@@ -1,0 +1,13 @@
+// 미디어쿼리에 따라 스타일 분기 적용
+@mixin responsive($screen) {
+  @if ($screen == 'md') {
+    @media screen and (min-width: $md-breakpoint) {
+      @content;
+    }
+  }
+  @if ($screen == 'lg') {
+    @media screen and (min-width: $lg-breakpoint) {
+      @content;
+    }
+  }
+}
