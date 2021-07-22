@@ -46,10 +46,11 @@
 ### 2021-07-20(화)
 
 - **프로젝트 구조화하기**
-  - styles 폴더에 base와 constants 폴더로 구분.
+  - styles 폴더에 base와 constants, layouts, mixins, modules 폴더로 구분.
     - base: reset, normalize scss
     - constants: 변수 파일 저장
     - layouts: 커스텀 그리드 시스템 설계
+    - moduls: 반복되는 컴포넌트 저장
 - **⭐️ Typography 주의사항**
   - font-size, line-height, letter-spacing을 세트로 보기!!
   - letter-spacing은 em 단위로.
@@ -96,3 +97,16 @@
   - key, value로 이루어진 데이터 타입.
   - 형태: map name: ()
   - 사용: <code>map-get(map name, key)</code>
+
+### 2021-07-22(목)
+
+- **modules 만들기**
+
+  - <code>%(placeholder)</coce>: 공통 스타일을 공유하는 컴포넌트가 있을 때 사용.
+    - 호출: <code>@extend %name</code>
+    - @mixin과의 차이점
+      - parameter가 없고, 확장성이 떨어짐.
+      - 연관있는 친구들을 그루핑해서 렌더링 함.
+  - ⭐️ img 태그를 스타일링 할 때 주의점
+    - 예민한 img 태그 자체를 건드리지 말고, 부모를 통해 스타일링해주기!
+    - <code>object-fit</code>: img태그에서 background-size 속성과 같이 사용할 수 있음.
