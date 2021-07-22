@@ -102,7 +102,7 @@
 
 - **modules 만들기**
 
-  - <code>%(placeholder)</coce>: 공통 스타일을 공유하는 컴포넌트가 있을 때 사용.
+  - <code>%(placeholder)</code>: 공통 스타일을 공유하는 컴포넌트가 있을 때 사용.
     - 호출: <code>@extend %name</code>
     - @mixin과의 차이점
       - parameter가 없고, 확장성이 떨어짐.
