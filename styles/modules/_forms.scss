@@ -1,0 +1,77 @@
+// Input, Select
+%form-base {
+  @include text-style(16);
+  display: block;
+  font-weight: 400;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid $border;
+  background-color: $white;
+  padding: 0 16px;
+  color: $primary;
+  appearance: none;
+  transition: all 300ms;
+
+  &::placeholder {
+    color: $tertiary;
+  }
+
+  &:not(:disabled):hover {
+    background-color: $background;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.form-select {
+  @extend %form-base;
+}
+
+// SELECT
+.select-group {
+  position: relative;
+
+  &.is-active {
+    .form-select {
+      border-color: $blue;
+    }
+
+    .ic-caret {
+      color: $blue;
+    }
+  }
+
+  .form-select {
+    padding-right: 40px;
+    text-overflow: ellipsis;
+  }
+
+  .ic-caret {
+    @include pos-center-y;
+    pointer-events: none;
+    right: 8px;
+    font-size: 24px;
+    color: $tertiary;
+  }
+}
+
+.input-group {
+  position: relative;
+
+  .ic-search {
+    @include pos-center-y;
+    left: 10px;
+    font-size: 20px;
+    color: $secondary;
+  }
+}
+
+// INPUT
+.form-input {
+  @extend %form-base;
+  padding-left: 40px;
+}
