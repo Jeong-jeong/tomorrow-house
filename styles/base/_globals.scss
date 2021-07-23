@@ -1,0 +1,51 @@
+// Utility 성 class 선언
+.visually-hidden {
+  // 레아아웃에 영향을 끼치지 않도록
+  position: absolute;
+  // 스크린 리더가 읽을 수 있도록
+  width: 1px;
+  height: 1px;
+  // 눈에 보이는 부분 제거
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  // 좌표 상 (0, 0)에 w: 1, h: 1 작은 네모박스 형성.
+  // 이때 margin: -1px로 좌표 밖으로 아웃시킴
+  overflow: hidden;
+}
+
+.sm-only {
+  @media screen and (min-width: $md-breakpoint) {
+    display: none !important;
+  }
+}
+.sm-hidden {
+  @media screen and (max-width: $md-breakpoint - 1) {
+    display: none !important;
+  }
+}
+
+.md-only {
+  @media screen and (min-width: $lg-breakpoint) {
+    display: none !important;
+  }
+
+  @media screen and (max-width: $md-breakpoint - 1) {
+    display: none !important;
+  }
+}
+.md-hidden {
+  @media screen and (min-width: $md-breakpoint) and (max-width: $lg-breakpoint - 1) {
+    display: none !important;
+  }
+}
+
+.lg-only {
+  @media screen and (max-width: $lg-breakpoint - 1) {
+    display: none !important;
+  }
+}
+.lg-hidden {
+  @media screen and (min-width: $lg-breakpoint) {
+    display: none !important;
+  }
+}
