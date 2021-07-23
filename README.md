@@ -31,6 +31,7 @@
   - icon, logo 등에 사용.
   - SVG, PDF 등
 - **SVG의 특징**
+
   - 장점
     - html 문서 상에서 svg 태그 그 자체로 사용할 경우, 태그로서 조작할 수 있다는 장점이 있음.
     - ex) svg 속성 fill의 값으로 currentColor를 줄 경우, 부모의 색을 그대로 상속받음.
@@ -47,7 +48,7 @@
 
 - **프로젝트 구조화하기**
   - styles 폴더에 base와 constants, layouts, mixins, modules 폴더로 구분.
-    - base: reset, normalize scss
+    - base: reset, normalize, globals scss
     - constants: 변수 파일 저장
     - layouts: 커스텀 그리드 시스템 설계
     - moduls: 반복되는 컴포넌트 저장
@@ -110,3 +111,23 @@
   - ⭐️ img 태그를 스타일링 할 때 주의점
     - 예민한 img 태그 자체를 건드리지 말고, 부모를 통해 스타일링해주기!
     - <code>object-fit</code>: img태그에서 background-size 속성과 같이 사용할 수 있음.
+
+### 2021-07-23(금)
+
+- **modules 만들기2**
+
+  - button 모듈
+    - button 스타일링을 styles, sizes, states로 구분해주기
+    - button은 text에 따라 크기가 달라지기 때문에 width값 선언하지 않는 것을 추천.
+    - <code>:not(x)</code>: 부정 가상 클래스
+      - x가 아닌것이 일치
+      - ex) disabled 상태가 아닌 x 요소가 hover 되었을 때
+        - <code>x:not(:disabled):hover</code>
+  - form 모듈
+    - select의 화살표 appearance를 없애고 스타일링할 경우, 클릭 이벤트가 안먹힘.
+      - <code>pointer-events: none</code>: 클릭 대상이 아니다! 라고 브라우저에 인식시켜줌.
+      - <code>aria-hidden</code>: 스크린리더가 건너뜀
+
+- **base 폴더에 globals 파일 생성**
+
+  - globals 폴더: 전역으로 사용할 클래스 선언
