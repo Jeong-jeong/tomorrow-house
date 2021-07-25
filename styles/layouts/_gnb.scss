@@ -10,7 +10,7 @@
   &-btn-group {
     @include flexbox(end);
 
-    .gnb-search {
+    .gnb-search-btn {
       margin-right: 4px;
     }
   }
@@ -37,7 +37,7 @@
     color: $secondary;
   }
 
-  &-menu {
+  &-menu-btn {
     color: $blue;
   }
 }
