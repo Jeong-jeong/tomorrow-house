@@ -41,3 +41,67 @@
     color: $blue;
   }
 }
+
+@include responsive(md) {
+  .gnb {
+    &-wrapper {
+      height: 80px;
+    }
+    &-left {
+      @include flexbox(start);
+
+      .logo {
+        position: static;
+        transform: none;
+        margin-right: 32px;
+
+        img {
+          height: 24px;
+        }
+      }
+
+      .gnb-nav {
+        &-list {
+          @include flexbox;
+          @include text-style(18);
+          font-weight: 700;
+        }
+
+        &-item {
+          margin-right: 24px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    &-right {
+      @include flexbox(right);
+
+      .gnb-btn-group {
+        margin-right: 24px;
+
+        .gnb-i-btn {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .btn-primary {
+      width: 88px;
+
+      i {
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
+@include responsive(lg) {
+  .input-group {
+    width: 264px;
+    margin-right: 24px;
+  }
+}
