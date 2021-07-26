@@ -105,23 +105,35 @@
                     <strong class="badge">12</strong>
                   </a>
 
-                  <button
-                    class="gnb-avatar sm-hidden"
-                    type="button"
-                    aria-label="마이메뉴 열기 버튼"
-                  >
-                    <div class="avatar-large">
-                      <img
-                        class="avatar-img"
-                        src="./assets/imgs/img-user-01.jpg"
-                        alt="유저 이미지"
-                      />
+                  <div class="my-menu sm-hidden">
+                    <button
+                      class="my-menu-btn"
+                      type="button"
+                      aria-label="마이메뉴 열기 버튼"
+                    >
+                      <div class="avatar-large">
+                        <img
+                          class="avatar-img"
+                          src="./assets/imgs/img-user-01.jpg"
+                          alt="유저 이미지"
+                        />
+                      </div>
+                    </button>
+                    <div class="my-menu-content">
+                      <ul class="my-menu-list">
+                        <li class="my-menu-item"><a href="/">마이페이지</a></li>
+                        <li class="my-menu-item"><a href="/"> 나의 쇼핑</a></li>
+                        <li class="my-menu-item"><a href="/">이벤트</a></li>
+                        <li class="my-menu-item">
+                          <button type="button">로그아웃</button>
+                        </li>
+                      </ul>
                     </div>
-                  </button>
+                  </div>
                 </div>
 
-                <div class="gnb-btn-group">
-                  <!-- 로그인 안했을 때 -->
+                <!-- 로그인 안했을 때 -->
+                <!-- <div class="gnb-btn-group">
                   <button
                     class="gnb-search-btn gnb-i-btn lg-hidden"
                     type="button"
@@ -142,7 +154,7 @@
                     <a href="/">로그인</a>
                     <a href="/">회원가입</a>
                   </div>
-                </div>
+                </div> -->
                 <!-- 로그인 안했을 때 -->
 
                 <button class="btn-primary btn-40 sm-hidden" type="button">
