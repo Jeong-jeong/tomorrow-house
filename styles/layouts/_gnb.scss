@@ -127,6 +127,26 @@
       }
     }
 
+    &-auth {
+      @include text-style(14);
+      font-weight: 700;
+      color: $secondary;
+      margin-left: 8px;
+
+      a {
+        margin-right: 12px;
+        transition: color 300ms;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
     .btn-primary {
       width: 88px;
 

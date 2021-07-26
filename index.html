@@ -61,7 +61,16 @@
                 </button>
               </div>
               <div class="gnb-right">
+                <form class="input-group lg-only">
+                  <i class="ic-search"></i>
+                  <input
+                    class="form-input"
+                    type="text"
+                    placeholder="스토어 검색"
+                  />
+                </form>
                 <div class="gnb-btn-group">
+                  <!-- 로그인 했을 때 -->
                   <button
                     class="gnb-search-btn gnb-i-btn lg-hidden"
                     type="button"
@@ -69,15 +78,6 @@
                   >
                     <i class="ic-search"></i>
                   </button>
-
-                  <form class="input-group lg-only">
-                    <i class="ic-search"></i>
-                    <input
-                      class="form-input"
-                      type="text"
-                      placeholder="스토어 검색"
-                    />
-                  </form>
 
                   <a
                     class="gnb-i-btn sm-hidden"
@@ -119,6 +119,31 @@
                     </div>
                   </button>
                 </div>
+
+                <div class="gnb-btn-group">
+                  <!-- 로그인 안했을 때 -->
+                  <button
+                    class="gnb-search-btn gnb-i-btn lg-hidden"
+                    type="button"
+                    aria-label="검색창 열기 버튼"
+                  >
+                    <i class="ic-search"></i>
+                  </button>
+                  <a
+                    class="gnb-i-btn"
+                    href="/"
+                    aria-label="장바구니 페이지로 이동"
+                  >
+                    <i class="ic-cart"></i>
+                    <strong class="badge">12</strong>
+                  </a>
+
+                  <div class="gnb-auth sm-hidden">
+                    <a href="/">로그인</a>
+                    <a href="/">회원가입</a>
+                  </div>
+                </div>
+                <!-- 로그인 안했을 때 -->
 
                 <button class="btn-primary btn-40 sm-hidden" type="button">
                   글쓰기
