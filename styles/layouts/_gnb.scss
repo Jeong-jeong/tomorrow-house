@@ -35,6 +35,11 @@
     height: 32px;
     font-size: 24px;
     color: $secondary;
+    transition: color 300ms;
+
+    &:not(.gnb-menu-btn):active {
+      color: $primary;
+    }
   }
 
   &-menu-btn {
