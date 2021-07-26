@@ -30,6 +30,7 @@
   }
 
   &-i-btn {
+    position: relative;
     @include flexbox;
     width: 32px;
     height: 32px;
@@ -37,8 +38,20 @@
     color: $secondary;
     transition: color 300ms;
 
-    &:not(.gnb-menu-btn):active {
-      color: $primary;
+    .badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 16px;
+      height: 16px;
+      padding: 0 4px;
+      background-color: $pink;
+      color: $white;
+      font-size: 10px;
+      line-height: 16px;
+      letter-spacing: -0.01em;
+      text-align: center;
+      border-radius: 10px;
     }
   }
 
@@ -84,7 +97,6 @@
 
         &-link {
           display: block;
-          background-color: pink;
           padding: $padding;
           transition: color 300ms;
           &.is-active,
@@ -129,5 +141,14 @@
   .input-group {
     width: 264px;
     margin-right: 24px;
+  }
+
+  .gnb-i-btn {
+    &:hover,
+    &:active {
+      background-color: $blue;
+      color: $white;
+      border-radius: 50%;
+    }
   }
 }
