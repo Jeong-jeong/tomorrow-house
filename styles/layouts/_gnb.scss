@@ -121,11 +121,13 @@
 
       .my-menu {
         $tooltip-size: 12px;
+        $button-size: 32px;
 
         position: relative;
 
         &-content {
           @include pos-center-x;
+          top: ($tooltip-size + $button-size) + 8px;
           box-shadow: $dropdown-shadow;
           border-radius: 4px;
 
@@ -166,7 +168,7 @@
           border-radius: 4px;
         }
         &-item {
-          @include text-style(16);
+          @include text-style(16, $primary);
           font-weight: 400;
           height: 44px;
 
