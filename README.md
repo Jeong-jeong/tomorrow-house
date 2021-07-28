@@ -155,3 +155,11 @@
 
 - **GNB 레이아웃 완성2**
   - login, sign과 관련된 클래스는 보통 auth라 함.
+
+### 2021-07-28(수)
+
+- **Sidebar**
+  - 접었다 펼쳤다 하는 걸 dropdown, collapse, drawer, accordian 이라 부름.
+  - <code>aria-label</code>이 영어일 때, <code>lang = 'en'</code>속성으로 스크린 리더가 영어로 읽게 도와주기.
+  - truncate: 텍스트 말줄임
+  - 기본 이미지는 <code>background-image</code>로 깔아주기.
