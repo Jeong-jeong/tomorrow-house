@@ -1,0 +1,107 @@
+.drawer-menu {
+  $drawer-menu-item-height: 36px;
+  $drawer-menu-content-bottom: 8px;
+
+  @function _calculate-max-content-height($length) {
+    @return $drawer-menu-item-height * $length + $drawer-menu-content-bottom;
+  }
+
+  &.is-active {
+    .drawer-menu-btn {
+      color: $blue;
+    }
+  }
+
+  &.is-open {
+    &.is-community {
+      $is-community-chilren: 9;
+
+      .drawer-menu-content {
+        max-height: _calculate-max-content-height($is-community-chilren);
+      }
+    }
+
+    &.is-store {
+      $is-store-chilren: 5;
+
+      .drawer-menu-content {
+        max-height: _calculate-max-content-height($is-store-chilren);
+      }
+    }
+
+    &.is-interior {
+      $is-interior-chilren: 12;
+      .drawer-menu-content {
+        max-height: _calculate-max-content-height($is-interior-chilren);
+      }
+    }
+
+    .drawer-menu-btn {
+      i:last-child {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &-content {
+    overflow: hidden;
+    max-height: 0;
+    margin-bottom: $drawer-menu-content-bottom;
+    transition: max-height 200ms;
+  }
+
+  &-btn {
+    @include flexbox(start);
+    @include text-style(18, $primary);
+    width: 100%;
+    height: 54px;
+    padding: 0 8px;
+    position: relative;
+    font-weight: 700;
+    transition: color 200ms;
+
+    i {
+      &:first-child {
+        position: relative; // TODO: check
+        top: 1px; // TODO: check
+        margin-right: 8px;
+        color: $primary;
+        font-size: 24px;
+      }
+
+      &:last-child {
+        @include pos-center-y;
+        right: 0;
+        color: $primary;
+        font-size: 16px;
+        transition: transform 200ms;
+      }
+    }
+  }
+
+  &-item {
+    &.is-acitve {
+      a {
+        color: $blue;
+      }
+    }
+    a {
+      @include flexbox(start);
+      @include text-style(14, $primary);
+      height: $drawer-menu-item-height;
+      padding-left: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: color 200ms;
+
+      i {
+        position: relative; // TODO: check
+        top: 1px; // TODO: check
+        font-size: 16px;
+        color: $pink;
+      }
+    }
+  }
+}
