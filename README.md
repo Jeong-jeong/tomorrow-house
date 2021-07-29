@@ -76,7 +76,8 @@
   - 모바일(sm), 테블릿(md), 데스크탑(lg) 별로 그리드 분석 후 코드로 저장
   - ⭐️ MOBILE FIRST!!
     - <code>.container</code>, <code>.row</code>, <code>.col</code>의 공통 적용 코드를 작성 후 해상도에 따라 미디어쿼리로 필요한 부분만 업데이트하기.
-    - SCSS의 템플릿 문자열은 <code>#{}</code>
+    - Interpolation: <code>#{}</code>
+      - 문자를 통해 '가변적인 값'들을 적용해야할 경우 사용.
   - ⭐️ max-container와 같이 고정된 값도 필요하다면 변수로 선언해 코드의 재사용성을 높이기.
 
 - **@Mixin 만들기**
@@ -163,3 +164,14 @@
   - <code>aria-label</code>이 영어일 때, <code>lang = 'en'</code>속성으로 스크린 리더가 영어로 읽게 도와주기.
   - truncate: 텍스트 말줄임
   - 기본 이미지는 <code>background-image</code>로 깔아주기.
+
+### 2021-07-29(목)
+
+- **Sidebar animation**
+  - 열었다 닫았다를 구현하기 위해선, 각 서랍의 list가 몇개인지, 전체 높이값은 얼마인지 알아야 함.
+  - 정확한 수치라면 <code>max-height</code>와 <code>overflow-hidden</code>을 통해 애니메이션 구현.
+  - y축 스크롤: overflow로 스크롤을 주고 싶을 땐, 브라우저에 대상 컴포넌트의 width, heigtht 값을 정확히 인식시키기.
+  - x축 toggle: width값 만큼 transform x축을 빼주고, 0으로 되돌리기.
+  - z-index 관리하기
+    - 변수로 관리!
+  - <code>overscoll-behavior</code>: 두 개의 컨텐츠가 겹쳐져 있고 앞이 스크롤 되게 설정했다면, 뒤 컨텐츠는 스크롤되지 않게 하는 속성.
