@@ -6,7 +6,6 @@
 
   &-header {
     padding: 0 12px;
-    border-bottom: 1px solid $border;
 
     .logo {
       a {
@@ -60,6 +59,38 @@
 
     a {
       width: 84px;
+    }
+  }
+
+  &-nav {
+    .drawer-menu {
+      border-top: 1px solid $border;
+
+      &.is-interior {
+        border-bottom: 1px solid $border;
+      }
+    }
+
+    .userpage-list {
+      $userpage-item-height: 36px;
+      margin-top: 16px;
+
+      &-item {
+        a {
+          @include flexbox(start);
+          @include text-style(14, $primary);
+          height: $userpage-item-height;
+          padding-left: 12px;
+          font-weight: 400;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
     }
   }
 }
