@@ -1,6 +1,6 @@
 .drawer-menu {
   $drawer-menu-item-height: 36px;
-  $drawer-menu-content-bottom: 8px;
+  $drawer-menu-content-bottom: 20px;
 
   @function _calculate-max-content-height($length) {
     @return $drawer-menu-item-height * $length + $drawer-menu-content-bottom;
@@ -13,6 +13,10 @@
   }
 
   &.is-open {
+    .drawer-menu-content {
+      margin-bottom: $drawer-menu-content-bottom;
+    }
+
     &.is-community {
       $is-community-chilren: 9;
 
@@ -30,7 +34,7 @@
     }
 
     &.is-interior {
-      $is-interior-chilren: 12;
+      $is-interior-chilren: 3;
       .drawer-menu-content {
         max-height: _calculate-max-content-height($is-interior-chilren);
       }
@@ -46,7 +50,6 @@
   &-content {
     overflow: hidden;
     max-height: 0;
-    margin-bottom: $drawer-menu-content-bottom;
     transition: max-height 200ms;
   }
 
