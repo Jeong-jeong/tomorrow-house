@@ -143,7 +143,7 @@
     - 마크업을 어떻게 나눌 것인지 고민하기
 
   - **GNB(Global Navigation Bar)**
-    - nav와 같은 sectioning 태그는 그 안의 헤딩 태그가 있어야 함!!
+    - nav, aside와 같은 sectioning 태그는 그 안의 헤딩 태그가 있어야 함!!
     - 그리드 분석 시 모바일 그리드와 같을 경우 col 생략 가능.
     - 그리드 column이 애매하게 위치할 경우 div로 영역 구분하기.
 
@@ -175,3 +175,12 @@
   - z-index 관리하기
     - 변수로 관리!
   - <code>overscoll-behavior</code>: 두 개의 컨텐츠가 겹쳐져 있고 앞이 스크롤 되게 설정했다면, 뒤 컨텐츠는 스크롤되지 않게 하는 속성.
+
+### 2021-07-30(금)
+
+- **Search-modal**
+  - 최근 검색어는 가장 아래가 오래된 것이므로 순서가 중요! 따라서 ol 태그 사용.
+  - flex-grow, flex-shrink: 0이 아닐 경우, 해당 아이템이 유연한 박스로 변해 빈 공간을 메움.
+    - 기본값
+      - `flex-grow: 0`
+      - `flex-shrink: 1`
