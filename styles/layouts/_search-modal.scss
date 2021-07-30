@@ -8,6 +8,10 @@
   padding: 12px 0;
   background-color: $white;
 
+  &-header {
+    margin-bottom: 20px;
+  }
+
   &-form {
     @include flexbox(between);
 
@@ -25,7 +29,7 @@
   .search-history {
     header {
       @include flexbox(between);
-      margin: 20px 0 8px;
+      margin-bottom: 8px;
 
       button,
       .title {
@@ -35,25 +39,35 @@
     }
 
     &-content {
-      $search-history-item-height: 44px;
+      $search-word-padding: 10px;
+      $search-delete-size: 32px;
 
       @include text-style(16, $primary);
 
       .search-placeholder {
+        @include flexbox(start);
+        height: 44px;
+        padding: 0 8px;
         color: $tertiary;
       }
 
       .search-history-item {
         @include flexbox(between);
-        height: $search-history-item-height;
+        position: relative;
 
         .search-word {
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
+          width: 100%;
+          padding: #{$search-word-padding} 0 #{$search-word-padding} 8px;
+          margin-right: $search-delete-size;
         }
 
         .search-delete {
+          position: absolute;
+          top: 6px;
+          right: 0;
+          width: $search-delete-size;
+          height: $search-delete-size;
+          flex-shrink: 0;
           color: $tertiary;
         }
       }
