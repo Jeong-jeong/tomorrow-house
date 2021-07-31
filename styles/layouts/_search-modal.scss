@@ -54,6 +54,12 @@
       .search-history-item {
         @include flexbox(between);
         position: relative;
+        border-radius: 2px;
+        transition: background-color 300ms;
+
+        &:hover {
+          background-color: $background;
+        }
 
         .search-word {
           width: 100%;
@@ -69,6 +75,10 @@
           height: $search-delete-size;
           flex-shrink: 0;
           color: $tertiary;
+
+          &:hover {
+            color: $primary;
+          }
         }
       }
     }
