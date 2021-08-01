@@ -48,6 +48,13 @@
 			border-bottom: 0;
 
 			.lnb-item {
+
+				&:hover {
+					a {
+						color: $blue;
+					}
+				}
+
 				a {
 					@include text-style(14);
 					height: $lnb-height-md;
