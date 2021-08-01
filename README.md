@@ -184,3 +184,22 @@
     - 기본값
       - `flex-grow: 0`
       - `flex-shrink: 1`
+
+### 2021-08-01(일)
+
+- **lnb**
+  - `calc()`: 연산을 할 수 없는 단위들을 연산이   가능하게 해주는 css 함수.
+    - ex) calc(100% + 8px)
+  - `max-content`, `min-content`: 자신이  갖고 있는 자손의 사이즈가 특정 값으로 고정되지   않았을 때 의미있게 사용됨.
+    - 호환성 이슈가 있음!!
+  - ⭐️ block VS inline-block ⭐️
+    - block
+      - 따로 width값을 주지 않는 한 `부모`의 content-box width의 100%를 기준으로 함.
+    - inline-block
+      - 따로 width값을 주지 않으면 자신을 기준으로 함.
+  - ⭐️ `overflow` issue
+    - overflow 한 쪽이 'visible'일 때, 다른 한쪽이 'scroll' / 'auto'라면 visible은 'auto'로 변함.
+
+
+
+
