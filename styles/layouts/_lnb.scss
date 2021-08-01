@@ -1,0 +1,40 @@
+.lnb {
+	position: relative;
+	overflow-x: auto;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	&-list {
+		@include inline-flexbox(start);
+		border-bottom: 1px solid $border;
+		height: 40px;
+		margin-left: -15px;
+		padding: 0 8px;
+		white-space: nowrap;
+
+		.lnb-item {
+
+			&.is-active {
+				a {
+					color: $blue;
+					border-bottom: 2px solid $blue;
+				}
+			}
+
+			a {
+				@include flexbox;
+				@include text-style(13, $dark);
+				height: 40px;
+				padding: 0 8px;
+				font-weight: 700;
+				border-bottom: 2px solid transparent;
+				transition: color 200ms, border 200ms;
+			}
+		}
+
+	}
+
+	
+}
