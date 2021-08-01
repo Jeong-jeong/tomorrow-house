@@ -96,7 +96,9 @@
           &-link {
             display: block;
             padding: $padding;
+            white-space: nowrap;
             transition: color 300ms;
+            
             &.is-active,
             &:focus,
             &:hover {
