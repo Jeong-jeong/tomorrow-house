@@ -58,191 +58,223 @@
   &-menu-btn {
     color: $blue;
   }
-}
 
-@include responsive(md) {
-  .gnb {
-    &-wrapper {
-      height: 80px;
-    }
-    &-left {
-      @include flexbox(start);
-
-      .logo {
-        position: static;
-        transform: none;
-        margin-right: 32px;
-
-        img {
-          height: 24px;
+  @include responsive(md) {
+      &-wrapper {
+        height: 80px;
+      }
+      &-left {
+        @include flexbox(start);
+  
+        .logo {
+          position: static;
+          transform: none;
+          margin-right: 32px;
+  
+          img {
+            height: 24px;
+          }
+        }
+  
+        .gnb-nav {
+          $padding: 8px;
+          &-list {
+            @include flexbox;
+            @include text-style(18);
+            font-weight: 700;
+            margin-left: -$padding;
+          }
+  
+          &-item {
+            margin-right: 24px - ($padding * 2);
+  
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+  
+          &-link {
+            display: block;
+            padding: $padding;
+            transition: color 300ms;
+            &.is-active,
+            &:focus,
+            &:hover {
+              color: $blue;
+            }
+          }
         }
       }
-
-      .gnb-nav {
-        $padding: 8px;
-        &-list {
-          @include flexbox;
-          @include text-style(18);
-          font-weight: 700;
-          margin-left: -$padding;
+  
+      &-right {
+        @include flexbox(right);
+  
+        .gnb-btn-group {
+          margin-right: 24px;
+  
+          .gnb-i-btn {
+            margin-right: 8px;
+          }
         }
-
-        &-item {
-          margin-right: 24px - ($padding * 2);
-
+  
+        .my-menu {
+          $tooltip-size: 12px;
+          $button-size: 32px;
+  
+          position: relative;
+  
+          &.is-active {
+              .avatar-large {
+                  border-color: $blue;
+            }
+  
+            .my-menu-content {
+              opacity: 1;
+              visibility: visible;
+              transform: translate3d(-50%, 0, 0);
+            }
+          }
+  
+          &-content {
+            @include pos-center-x;
+            top: ($tooltip-size + $button-size) + 8px;
+            box-shadow: $dropdown-shadow;
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translate3d(-50%, -10px, 0);
+            transition: transform 200ms, visibility 200ms, opacity 200ms;
+  
+            &::before,
+            &::after {
+              @include pos-center-x;
+              top: -($tooltip-size * 2);
+              display: block;
+              content: '';
+              width: 0;
+              height: 0;
+              border-top: $tooltip-size solid transparent;
+              border-right: 10px solid transparent;
+              border-bottom: $tooltip-size solid $border;
+              border-left: 10px solid transparent;
+            }
+  
+            &::after {
+              top: -($tooltip-size * 2) + 2px;
+              border-bottom-color: $white;
+            }
+          }
+  
+          &-btn {
+            .avatar-large {
+              border: 3px solid transparent;
+            }
+          }
+  
+          &-list {
+            width: 200px;
+            padding: 8px;
+            background-color: $white;
+            border: 1px solid $border;
+            border-radius: 4px;
+          }
+          &-item {
+            @include text-style(16, $primary);
+            font-weight: 400;
+            height: 44px;
+  
+            a,
+            button {
+              @include flexbox(start);
+              width: 100%;
+              height: 100%;
+              padding: 0 8px;
+              border-radius: 2px;
+  
+              &:hover {
+                background-color: $background;
+              }
+            }
+          }
+        }
+      }
+  
+      &-auth {
+        @include text-style(14);
+        font-weight: 700;
+        color: $secondary;
+        margin-left: 8px;
+  
+        a {
+          margin-right: 12px;
+          transition: color 300ms;
+  
           &:last-child {
             margin-right: 0;
           }
-        }
-
-        &-link {
-          display: block;
-          padding: $padding;
-          transition: color 300ms;
-          &.is-active,
-          &:focus,
+  
           &:hover {
             color: $blue;
           }
         }
       }
-    }
+  
+      .btn-primary {
+        width: 88px;
+  
+        i {
+          margin-left: 4px;
+        }
+      }
+  }
+  
+  @include responsive(lg) {
+  
+    &-search {
+      position: relative;
+      width: 264px;
+      margin-right: 24px;
 
-    &-right {
-      @include flexbox(right);
-
-      .gnb-btn-group {
-        margin-right: 24px;
-
-        .gnb-i-btn {
-          margin-right: 8px;
+      &.is-active {
+        .search-history {
+          display: block;
         }
       }
 
-      .my-menu {
-        $tooltip-size: 12px;
-        $button-size: 32px;
+      .input-group {
+        width: 100%;
+      }
+  
+      .search-history {
+        box-shadow: $dropdown-shadow;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        width: 100%;
+        border: 1px solid $border;
+        border-radius: 4px;
+        background-color: $white;
 
-        position: relative;
-
-        &.is-active {
-            .avatar-large {
-                border-color: $blue;
-          }
-
-          .my-menu-content {
-            opacity: 1;
-            visibility: visible;
-            transform: translate3d(-50%, 0, 0);
-          }
+        header {
+          padding: 16px 16px 0;
+          margin-bottom: 0;
         }
 
         &-content {
-          @include pos-center-x;
-          top: ($tooltip-size + $button-size) + 8px;
-          box-shadow: $dropdown-shadow;
-          border-radius: 4px;
-          opacity: 0;
-          visibility: hidden;
-          transform: translate3d(-50%, -10px, 0);
-          transition: transform 200ms, visibility 200ms, opacity 200ms;
-
-          &::before,
-          &::after {
-            @include pos-center-x;
-            top: -($tooltip-size * 2);
-            display: block;
-            content: '';
-            width: 0;
-            height: 0;
-            border-top: $tooltip-size solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: $tooltip-size solid $border;
-            border-left: 10px solid transparent;
-          }
-
-          &::after {
-            top: -($tooltip-size * 2) + 2px;
-            border-bottom-color: $white;
-          }
-        }
-
-        &-btn {
-          .avatar-large {
-            border: 3px solid transparent;
-          }
-        }
-
-        &-list {
-          width: 200px;
           padding: 8px;
-          background-color: $white;
-          border: 1px solid $border;
-          border-radius: 4px;
-        }
-        &-item {
-          @include text-style(16, $primary);
-          font-weight: 400;
-          height: 44px;
-
-          a,
-          button {
-            @include flexbox(start);
-            width: 100%;
-            height: 100%;
-            padding: 0 8px;
-            border-radius: 2px;
-
-            &:hover {
-              background-color: $background;
-            }
-          }
         }
       }
     }
-
-    &-auth {
-      @include text-style(14);
-      font-weight: 700;
-      color: $secondary;
-      margin-left: 8px;
-
-      a {
-        margin-right: 12px;
-        transition: color 300ms;
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        &:hover {
-          color: $blue;
-        }
-      }
-    }
-
-    .btn-primary {
-      width: 88px;
-
-      i {
-        margin-left: 4px;
+  
+  
+    &-i-btn {
+      &:hover,
+      &:active {
+        background-color: $blue;
+        color: $white;
+        border-radius: 50%;
       }
     }
   }
 }
 
-@include responsive(lg) {
-  .input-group {
-    width: 264px;
-    margin-right: 24px;
-  }
-
-  .gnb-i-btn {
-    &:hover,
-    &:active {
-      background-color: $blue;
-      color: $white;
-      border-radius: 50%;
-    }
-  }
-}
