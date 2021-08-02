@@ -1,0 +1,70 @@
+.global-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px 0 40px;
+  background-color: $background;
+
+  &-title {
+    @include text-style(13, $dark);
+    font-weight: 700;
+
+    .ic-chevron {
+      display: inline-block;
+      font-size: 12px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &-contact {
+    @include text-style(24, $dark);
+    font-weight: 700;
+  }
+
+  &-time {
+    @include text-style(12, $primary);
+  }
+
+  &-detail {
+    margin-top: 24px;
+
+    &-item {
+      @include flexbox(start);
+      font-size: 10px;
+      line-height: 16px;
+      letter-spacing: -0.01em;
+      color: $secondary;
+
+      dt {
+        flex-shrink: 0;
+      }
+
+      address {
+        font-style: normal;
+      }
+    }
+  }
+
+  @include responsive(lg) {
+    a:hover {
+      text-decoration: underline;
+    }
+
+    &-title {
+      @include text-style(14);
+    }
+
+    &-detail {
+      @include flexbox(start);
+
+      &-item {
+        &:not(:last-child)::after {
+          display: block;
+          content: '|';
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
