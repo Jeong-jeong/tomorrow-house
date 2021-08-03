@@ -20,8 +20,13 @@
   @include responsive(md) {
     margin-top: #{$gnb-height-md + $lnb-height-md};
 
+    .gnb {
+      z-index: $gnb-level;
+    }
+
     .lnb {
       top: $gnb-height-md;
+      z-index: $lnb-level;
     }
   }
 }
