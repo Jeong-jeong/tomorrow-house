@@ -199,3 +199,8 @@
       - 따로 width값을 주지 않으면 `자신`을 기준으로 함.
   - ⭐️ `overflow` issue
     - overflow 한 쪽이 'visible'일 때, 다른 한쪽이 'scroll' / 'auto'라면 visible은 'auto'로 변함.
+
+### 2021-08-04(수)
+
+- **Breadcrumb**
+  - 사이트 전체 구조에서 현재 어디에 위치하는지 알려주는 부차적인 navation.
