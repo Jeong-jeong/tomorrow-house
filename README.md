@@ -204,3 +204,14 @@
 
 - **Breadcrumb**
   - 사이트 전체 구조에서 현재 어디에 위치하는지 알려주는 부차적인 navation.
+
+### 2021-08-05(목)
+
+- **Carousel** === slider
+  - `<figure>`: img 태그를 감싸 컨텐츠적인 요소라 알려줄 때 사용.
+    - `<figcaption>`로 상세 설명(alt 대체).
+  - `WAI-ARIA role`
+    - WAI-ARIA 기술 중 하나.
+    - 연관성이 있지만, 기존 태그만으론 역할을 파악하기 어려울 때 `role` 속성을 사용.
+      - `role = region`: 이거 좀 중요해! 랜드마크야!
+      - `aria-labelledby`: role과의 관계성을 보여주고 싶을 때, id를 주고 다른 쪽엔 aria-labelledby 사용.
