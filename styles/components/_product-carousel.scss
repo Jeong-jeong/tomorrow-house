@@ -1,11 +1,46 @@
 .product-carousel {
+  position: relative;
+  $grid-margin: 15px;
+
+  &-slider {
+    margin: 0 -#{$grid-margin};
+  }
+
+  &-thumbnail {
+    @include pos-center-x;
+    bottom: 16px;
+
+    .thumbnail-list {
+      @include flexbox;
+      img {
+        display: none;
+      }
+
+      &-item {
+        @include flexbox;
+        margin: 0 4px;
+
+        button {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: rgba($white, 0.7);
+          transition: transform 300ms, background-color 300ms;
+        }
+
+        &.tns-nav-active {
+          button {
+            background-color: rgba($white, 1);
+            transform: scale(1.3333333333);
+          }
+        }
+      }
+    }
+  }
+
   img {
     display: block;
     width: 100%;
     height: auto;
-  }
-
-  &-thumbnail {
-    display: none;
   }
 }
