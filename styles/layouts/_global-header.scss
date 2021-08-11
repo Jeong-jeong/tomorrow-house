@@ -1,6 +1,7 @@
 .global-header {
+  z-index: $gnb-level;
   width: 100%;
-  margin-top: #{$gnb-height-sm + $lnb-height-sm};
+  height: #{$gnb-height-sm + $lnb-height-sm};
 
   .gnb,
   .lnb {
@@ -11,22 +12,19 @@
 
   .gnb {
     top: 0;
+    z-index: $gnb-level;
   }
 
   .lnb {
     top: $gnb-height-sm;
+    z-index: $lnb-level;
   }
 
   @include responsive(md) {
-    margin-top: #{$gnb-height-md + $lnb-height-md};
-
-    .gnb {
-      z-index: $gnb-level;
-    }
+    height: #{$gnb-height-md + $lnb-height-md};
 
     .lnb {
       top: $gnb-height-md;
-      z-index: $lnb-level;
     }
   }
 }
